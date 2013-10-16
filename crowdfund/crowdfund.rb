@@ -1,14 +1,11 @@
-project1 = "ABC"
-project2 = "LMN"
-project3 = "XYZ"
-
-funding1 = 1000
-funding2 = 1000
-funding3 = 1000
-
-puts "Project #{project1} has $#{funding1} in funding"
+def introduce(project, funding=100)
+	"As of #{time} #{project} has $#{funding} in funding"
+end
+def time
+	Time.new.strftime('%A')
+end
 
 puts "Projects:"
-puts "Project #{project1}"
-puts "Project #{project2}"
-puts "Project #{project3}"
+puts introduce("Project 1", 1000)
+puts introduce("Project 2")
+puts introduce("Project 3", 10000)
