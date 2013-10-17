@@ -1,4 +1,6 @@
 require_relative 'player'
+require_relative 'die'
+require_relative 'game_turn'
 
 class Game
 
@@ -18,8 +20,8 @@ class Game
 	end
 
 	def play
-		puts self
 		@players.each do |player|
+			GameTurn.take_turn(player)
 			puts player
 		end
 	end
