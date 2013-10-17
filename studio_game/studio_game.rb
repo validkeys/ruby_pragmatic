@@ -1,12 +1,16 @@
-def time
-	Time.new
+require_relative('game')
+
+player1 = Player.new("larry",60)
+player2 = Player.new("curly")
+player3 = Player.new("moe",25)
+
+players = [player1, player2, player3]
+
+game = Game.new("Knuckleheads")
+
+players.each do |player|
+	game.add_player(player)
 end
 
-def say_hello(name, health=100)
-	"I'm #{name.capitalize} with a health of #{health} as of #{time}"
-end
-
-puts say_hello("larry", 60)
-puts say_hello("curly", 125)
-puts say_hello("moe")
-puts say_hello("shemp", 90)
+game.play
+puts game.name
