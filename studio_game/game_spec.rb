@@ -20,23 +20,25 @@ describe Game do
 
 	it "w00ts the player if a high number is rolled" do
 		Die.any_instance.stub(:roll).and_return(6)
-		@game.play
+		@game.play(2)
 
-		@player.health.should == @initial_health + 15
+		@player.health.should == @initial_health + (15 * 2)
 	end
 
 	it "Blams the player if a low number is rolled" do
 		Die.any_instance.stub(:roll).and_return(2)
-		@game.play
+		@game.play(2)
 
-		@player.health.should == @initial_health - 10
+		@player.health.should == @initial_health - (10 * 2)
 	end
 
 	it "Nothing happens if a medium number is rolled" do
 		Die.any_instance.stub(:roll).and_return(3)
-		@game.play
+		@game.play(2)
 
 		@player.health.should == @initial_health
-	end		
+	end
+
+	
 
 end

@@ -61,4 +61,18 @@ describe Player do
 	  end
 	end
 
+	context "in a collection of players" do
+	  before do
+	  		@player1 = Player.new("larry",	150)
+			@player2 = Player.new("curly", 	65)
+			@player3 = Player.new("moe",	85)
+
+			@players = [@player1, @player2, @player3]
+	  end
+
+	  it "should be sorted in descending order" do
+	    @players.sort.should == [@player1, @player3, @player2]
+	  end
+	end
+
 end

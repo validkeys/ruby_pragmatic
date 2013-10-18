@@ -2,9 +2,9 @@ require_relative 'game'
 
 def game
 
-	player1 = Player.new("larry",60)
-	player2 = Player.new("curly")
-	player3 = Player.new("moe",25)
+	player2 = Player.new("curly", 	75)
+	player3 = Player.new("moe",		65)
+	player1 = Player.new("larry",	150)
 
 	players = [player1, player2, player3]
 
@@ -12,13 +12,15 @@ def game
 
 	players.each do |player|
 		game.add_player(player)
-		player.w00t
-		player.w00t
-		player.blam
+		# player.w00t
+		# player.w00t
+		# player.blam
 	end
 
-	game.play
-	puts game.name
+	game.play(3)
+	puts "\n#{game.name} Statistics:"
+	game.print_stats
+	game.print_scoreboard
 
 end
 

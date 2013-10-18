@@ -4,8 +4,9 @@ class Player
 	attr_accessor :name #read-and-write
 
 	def initialize(name, health=100)
-		@name 	= name.capitalize
-		@health = health
+		@name 		= name.capitalize
+		@health 	= health
+		@treasures 	= Hash.new(0)
 	end
 
 	# overriding the attr_accessor
@@ -30,6 +31,10 @@ class Player
 	def w00t
 		@health += 15
 		puts "#{@name} got w00ted!"
+	end
+
+	def <=>(other_player)
+		other_player.score <=> score
 	end
 
 	def blam
